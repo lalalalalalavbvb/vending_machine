@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>
+        lnwza007x Machine
+    </title>
+    <link href="../../assets/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a class="nav-logo" href="../../index.html">
+                lnwza007x Machine
+            </a>
+            <div class="nav-links">
+                <a class="admin-link" href="../admin/">
+                    Admin
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="machine">
+        <section class="products-panel">
+            <div class="page-header">
+                <h1>
+                    ตู้ขายยาอัตโนมัติ
+                </h1>
+                <p>
+                    เลือกสินค้าที่ต้องการ
+                </p>
+            </div>
+            <div class="product-grid" id="product-list">
+                <div class="loading">
+                    กำลังโหลดสินค้า...
+                </div>
+            </div>
+        </section>
+        <aside class="checkout">
+            <h2>
+                รายการสั่งซื้อ
+            </h2>
+            <div class="cart" id="cart">
+            </div>
+            <div class="total">
+                <span>
+                    รวมทั้งหมด
+                </span>
+                <strong id="total">
+                    ฿0.00
+                </strong>
+            </div>
+            <div class="pay-tabs">
+                <button class="tab active" id="cash-tab">
+                    Cash
+                </button>
+                <button class="tab" id="qr-tab">
+                    QR PromptPay
+                </button>
+            </div>
+            <div id="cash-box">
+                <label>
+                    จำนวนเงินที่ใส่
+                </label>
+                <div class="cash-display" id="cash-display">
+                    ฿0.00
+                </div>
+                <div class="cash-grid">
+                    <button data-cash="1">
+                        ฿1
+                    </button>
+                    <button data-cash="5">
+                        ฿5
+                    </button>
+                    <button data-cash="10">
+                        ฿10
+                    </button>
+                    <button data-cash="20">
+                        ฿20
+                    </button>
+                    <button data-cash="50">
+                        ฿50
+                    </button>
+                    <button data-cash="100">
+                        ฿100
+                    </button>
+                    <button data-cash="500">
+                        ฿500
+                    </button>
+                    <button data-cash="1000">
+                        ฿1,000
+                    </button>
+                    <button class="clear" id="clear-cash">
+                        ล้างเงิน
+                    </button>
+                </div>
+                <div class="message" id="cash-message">
+                </div>
+            </div>
+            <button class="pay-button" disabled="" id="pay-button">
+                เลือกสินค้าที่ต้องการ
+            </button>
+        </aside>
+    </main>
+    <div class="modal hidden" id="payment-modal">
+        <div class="modal-card">
+            <div id="processing-step">
+                <div class="spinner">
+                </div>
+                <h2>
+                    กำลังชำระเงิน
+                </h2>
+                <p>
+                    กรุณารอสักครู่...
+                </p>
+            </div>
+            <div class="hidden" id="success-step">
+            </div>
+            <div class="hidden" id="qr-step">
+                <h2>
+                    QR PromptPay
+                </h2>
+                <p>
+                    สแกน QR Code เพื่อชำระเงิน
+                </p>
+                <img class="qr-image" src="../../assets/images/promptpay.png" />
+                <h2 id="qr-total">
+                    ฿0.00
+                </h2>
+                <button class="pay-button" id="confirm-qr">
+                    ชำระเงิน
+                </button>
+                <button class="cancel-button" id="cancel-qr">
+                    ยกเลิก
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.11.0/dist/axios.min.js">
+    </script>
+    <script src="../../js/api.js">
+    </script>
+    <script src="./index.js">
+    </script>
+</body>
+
+</html>

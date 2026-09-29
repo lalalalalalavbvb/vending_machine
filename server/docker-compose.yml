@@ -1,0 +1,52 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shopdb
+    ports:
+      - "8820:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../shopdb.sql:/docker-entrypoint-initdb.d/shopdb.sql:ro
+    networks: [shopnet]
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8821:80"
+    depends_on: [db]
+    networks: [shopnet]
+
+  server:
+    build: .
+    container_name: vending_server
+    env_file: [.env]
+    ports: ["8000:8000"]
+    volumes:
+      - ../frontend/assets/uploads:/app/frontend-assets/uploads
+    depends_on: [db]
+    networks: [shopnet]
+
+  frontend:
+    image: nginx:alpine
+    container_name: vending_frontend
+    ports: ["8081:80"]
+    volumes:
+      - ../frontend:/usr/share/nginx/html:ro
+    depends_on: [server]
+    networks: [shopnet]
+
+networks:
+  shopnet:
+    driver: bridge
+volumes:
+  mysql_data:
+    driver: local

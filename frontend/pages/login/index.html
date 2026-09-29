@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lnwza007x Admin Login</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+    <main class="login-page">
+        <div class="login-card">
+            <h1>Admin Login</h1>
+            <p>เข้าสู่ระบบจัดการตู้ขายยา</p>
+            <input id="email" placeholder="Username" value="admin">
+            <input id="password" placeholder="Password" type="password">
+            <button class="pay-button" id="login">เข้าสู่ระบบ</button>
+            <div class="message error" id="error"></div>
+            <a href="../shop/">กลับหน้าตู้</a>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.11.0/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

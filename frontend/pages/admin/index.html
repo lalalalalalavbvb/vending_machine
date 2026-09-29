@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>
+        lnwza007x Admin
+    </title>
+    <link href="../../assets/css/styles.css" rel="stylesheet" />
+    <link href="./admin.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a class="nav-logo" href="../../index.html">
+                lnwza007x Admin
+            </a>
+            <div class="nav-links">
+                <a href="../shop/">
+                    หน้าตู้
+                </a>
+                <button class="nav-button" id="logout">
+                    ออกจากระบบ
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="admin-page">
+        <div class="page-header">
+            <div>
+                <h1>
+                    จัดการสินค้า
+                </h1>
+                <p>
+                    เพิ่ม แก้ไข ลบ และอัปโหลดรูปสินค้า
+                </p>
+            </div>
+            <button class="add" id="add">
+                + เพิ่มสินค้า
+            </button>
+        </div>
+        <div class="product-grid" id="admin-products">
+        </div>
+        <section class="orders">
+            <div class="page-header">
+                <div>
+                    <h2>
+                        ประวัติคำสั่งซื้อ
+                    </h2>
+                    <p>
+                        ประวัติการขายจากตู้
+                    </p>
+                </div>
+                <button class="outline" id="refresh">
+                    รีเฟรช
+                </button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Order
+                            </th>
+                            <th>
+                                สินค้า
+                            </th>
+                            <th>
+                                ยอดรวม
+                            </th>
+                            <th>
+                                วิธีชำระ
+                            </th>
+                            <th>
+                                รับเงิน
+                            </th>
+                            <th>
+                                เงินทอน
+                            </th>
+                            <th>
+                                เวลา
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <div class="modal hidden" id="modal">
+        <div class="modal-card admin-modal">
+            <h2 id="modal-title">
+                เพิ่มสินค้า
+            </h2>
+            <input id="pid" type="hidden" />
+            <label>
+                ชื่อสินค้า
+            </label>
+            <input id="name" />
+            <label>
+                ราคา
+            </label>
+            <input id="price" min="0" step="0.01" type="number" />
+            <label>
+                Stock
+            </label>
+            <input id="stock" min="0" type="number" />
+            <label>
+                รายละเอียด
+            </label>
+            <textarea id="desc"></textarea>
+            <label>
+                รูปสินค้า
+            </label>
+            <input accept="image/*" id="image" type="file" />
+            <img class="preview" id="preview" />
+            <button class="pay-button" id="save">
+                บันทึก
+            </button>
+            <button class="cancel-button" id="close">
+                ยกเลิก
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.11.0/dist/axios.min.js">
+    </script>
+    <script src="../../js/api.js">
+    </script>
+    <script src="./index.js">
+    </script>
+</body>
+
+</html>

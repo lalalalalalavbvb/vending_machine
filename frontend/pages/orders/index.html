@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lnwza007x - ประวัติคำสั่งซื้อ</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a class="nav-logo" href="../../index.html">lnwza007x</a>
+            <div class="nav-links">
+                <a href="../shop/">หน้าตู้</a>
+                <a href="../admin/">Admin</a>
+            </div>
+        </div>
+    </nav>
+    <main class="admin-page">
+        <div class="page-header">
+            <div>
+                <h1>ประวัติคำสั่งซื้อ</h1>
+                <p>ประวัติการขายจากตู้</p>
+            </div>
+            <button class="outline" id="refresh">รีเฟรช</button>
+        </div>
+        <section class="orders">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>สินค้า</th>
+                            <th>ยอดรวม</th>
+                            <th>วิธีชำระ</th>
+                            <th>รับเงิน</th>
+                            <th>เงินทอน</th>
+                            <th>เวลา</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders">
+                        <tr>
+                            <td colspan="7">กำลังโหลด...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.11.0/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
