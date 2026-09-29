@@ -85,6 +85,13 @@ nav {
     background: #16a34a;
 }
 
+.warning-text {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #4b5563;
+    margin: 0;
+}
+
 .machine {
     max-width: 1400px;
     margin: 30px auto;
